@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /*
+    Nền trắng với một lớp loang xanh rất nhạt ở đầu trang.
+    Dùng màu thay vì ảnh nên không tốn thêm request nào.
+  */
+  body {
+    @apply bg-white text-slate-900 antialiased;
+    background-image:
+      radial-gradient(60rem 32rem at 50% -14rem, rgb(219 234 254 / 0.85), transparent 70%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  /* Vòng focus thống nhất, đủ tương phản trên nền sáng. */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-blue-600;
+  }
+}
+
+@layer utilities {
+  @keyframes toast-in {
+    from {
+      opacity: 0;
+      transform: translateY(0.75rem) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-toast-in {
+    animation: toast-in 0.18s ease-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-toast-in {
+      animation: none;
+    }
+  }
+}
