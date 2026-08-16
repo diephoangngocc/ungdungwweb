@@ -67,6 +67,25 @@ export async function submitCodeAction(
   _prevState: SubmitState,
   formData: FormData,
 ): Promise<SubmitState> {
+  // Bọc toàn bộ luồng: một exception lọt ra khỏi Server Action sẽ bị Next.js
+  // đổi thành màn hình trắng "Application error", xoá sạch những gì người dùng
+  // vừa gõ. Trả về SubmitState thì form vẫn còn nguyên và hiện được lý do.
+  try {
+    return await runSubmit(formData);
+  } catch (err) {
+    // Log ra Runtime Logs của Vercel — đây là nơi duy nhất còn thấy lỗi gốc.
+    console.error('[submit-code] unexpected failure:', err);
+    return {
+      status: 'error',
+      message:
+        'Máy chủ đang gặp sự cố khi lưu mã. Vui lòng tải lại trang và thử lại; ' +
+        'nếu vẫn lỗi hãy nhắn Zalo 0327158672.',
+      fieldErrors: {},
+    };
+  }
+}
+
+async function runSubmit(formData: FormData): Promise<SubmitState> {
   const mode = submitModeSchema.safeParse(formData.get('mode'));
   if (!mode.success) {
     return { status: 'error', message: 'Chế độ đăng mã không hợp lệ.', fieldErrors: {} };

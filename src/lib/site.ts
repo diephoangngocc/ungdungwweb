@@ -7,7 +7,7 @@
  * vì góc dưới bên trái sẽ bị chữ đè lên.
  */
 export const SITE = {
-  name: "UngDung's Code",
+  name: 'Trạm Voting Hà An Huy',
 
   /** Người/nhóm lập ra web, hiện ở header và footer. */
   owner: 'UngDung',

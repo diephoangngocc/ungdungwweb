@@ -50,7 +50,7 @@ export const GUIDE_PHASES: GuidePhase[] = [
         imageAlt: 'Danh sách sự kiện trong Event Hub, nút Tham gia ngay',
       },
       {
-        text: 'Vào trong sự kiện, con số ở góc trên bên trái chính là **điểm Mã Lực** của bạn. Nhớ kiểm tra mục Fandom phải đang là **HÀ AN HUY**.',
+        text: 'Vào trong sự kiện, con số ở góc trên bên trái chính là **điểm Mã Lực** của bạn.',
         image: '/guide/buoc-3.jpg',
         imageAlt: 'Trang sự kiện: điểm Mã Lực, mục Referral, Nhiệm vụ và nút Chơi ngay',
       },
