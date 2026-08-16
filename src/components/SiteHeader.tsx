@@ -53,8 +53,9 @@ export function SiteHeader() {
 
           {/* Chữ bên trái */}
           <div className="absolute inset-x-0 bottom-0 p-4 pr-36 sm:p-6 sm:pr-48 lg:pr-56">
-            <span className="inline-flex items-center rounded-full bg-slate-900/60 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide text-white ring-1 ring-white/25 backdrop-blur-sm">
-              Do {SITE.owner} lập
+            {/* Không ép uppercase: câu credit viết thường đọc thân mật hơn. */}
+            <span className="inline-flex items-center rounded-full bg-slate-900/60 px-2.5 py-0.5 text-[11px] font-bold tracking-wide text-white ring-1 ring-white/25 backdrop-blur-sm">
+              {SITE.credit}
             </span>
             <h1 className="mt-2 text-2xl font-black tracking-tight text-white drop-shadow-sm sm:text-3xl">
               {SITE.name}

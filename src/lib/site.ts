@@ -9,12 +9,14 @@
 export const SITE = {
   name: 'Trạm Voting Hà An Huy',
 
-  /** Người/nhóm lập ra web, hiện ở header và footer. */
-  owner: 'UngDung',
+  /**
+   * Dòng credit trên huy hiệu nhỏ ở banner. Ghi trọn câu ở đây thay vì ghép
+   * "Do {owner} lập" trong component, để đổi cách xưng hô không phải sửa code.
+   */
+  credit: 'From UngDung with love',
 
   /** Mục đích của web — câu này nằm ngay dưới tiêu đề banner. */
-  tagline:
-    'Nơi gom và luân chuyển mã mời Mango của cộng đồng, để tích hoả lực vote cho Hà An Huy.',
+  tagline: 'Hướng dẫn vote cho các ungdung',
 
   /** Giải thích cơ chế, hiện trong khối thông tin dưới banner. */
   howItWorks:
