@@ -5,23 +5,9 @@ import { getSupabaseServerClient } from '@/lib/supabase/server';
 import { submitCodeSchema, submitDeclaredSchema, submitModeSchema } from '@/lib/validation';
 import { describeError, parseRpcError } from '@/lib/errors';
 import type { CodeRow } from '@/lib/types';
-
-type FieldKey = 'nickname' | 'code' | 'tier' | 'parentCode' | 'declaredCount';
-
-export type SubmitState = {
-  status: 'idle' | 'success' | 'error';
-  message: string;
-  /** Lỗi theo từng field để highlight input tương ứng. */
-  fieldErrors: Partial<Record<FieldKey, string>>;
-  /** Bản ghi vừa tạo (dùng để hiển thị xác nhận). */
-  created?: Pick<CodeRow, 'code' | 'nickname' | 'tier' | 'parent_code'>;
-};
-
-export const initialSubmitState: SubmitState = {
-  status: 'idle',
-  message: '',
-  fieldErrors: {},
-};
+// File này gắn 'use server' nên KHÔNG được export gì ngoài async function —
+// kiểu và hằng khởi tạo nằm ở @/lib/action-state.
+import type { SubmitFieldKey as FieldKey, SubmitState } from '@/lib/action-state';
 
 function invalid(issues: { path: (string | number)[]; message: string }[]): SubmitState {
   const fieldErrors: SubmitState['fieldErrors'] = {};

@@ -3,7 +3,8 @@
 import { useActionState, useEffect, useMemo, useRef, useState } from 'react';
 // Next.js 14 (React 18): thay dòng trên bằng
 //   import { useFormState } from 'react-dom';
-import { initialSubmitState, submitCodeAction } from '@/app/actions/submit-code';
+import { submitCodeAction } from '@/app/actions/submit-code';
+import { initialSubmitState } from '@/lib/action-state';
 import { useToast } from '@/components/Toast';
 import { PREFILL_PARENT_EVENT } from '@/lib/events';
 import { TIER_OPTIONS, type Tier } from '@/lib/types';

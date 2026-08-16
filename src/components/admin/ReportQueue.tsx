@@ -1,7 +1,8 @@
 'use client';
 
 import { useActionState, useEffect, useState } from 'react';
-import { adminResolveReportAction, initialActionState } from '@/app/actions/admin';
+import { adminResolveReportAction } from '@/app/actions/admin';
+import { initialActionState } from '@/lib/action-state';
 import { useToast } from '@/components/Toast';
 import { TierBadge } from '@/components/TierBadge';
 import { REPORT_REASON_LABEL, type AdminReport } from '@/lib/types';

@@ -20,12 +20,8 @@ import {
   adminUpdateCodeSchema,
 } from '@/lib/validation';
 
-export type ActionState = {
-  status: 'idle' | 'success' | 'error';
-  message: string;
-};
-
-export const initialActionState: ActionState = { status: 'idle', message: '' };
+// 'use server' => chỉ được export async function; kiểu + hằng ở @/lib/action-state.
+import type { ActionState } from '@/lib/action-state';
 
 /**
  * Mọi server action admin PHẢI gọi hàm này trước tiên.

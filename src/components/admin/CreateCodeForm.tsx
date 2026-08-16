@@ -1,7 +1,8 @@
 'use client';
 
 import { useActionState, useEffect, useRef } from 'react';
-import { adminCreateCodeAction, initialActionState } from '@/app/actions/admin';
+import { adminCreateCodeAction } from '@/app/actions/admin';
+import { initialActionState } from '@/lib/action-state';
 import { useToast } from '@/components/Toast';
 import { TIER_OPTIONS } from '@/lib/types';
 

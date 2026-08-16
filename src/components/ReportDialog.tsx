@@ -1,7 +1,8 @@
 'use client';
 
 import { useActionState, useEffect, useRef, useState } from 'react';
-import { initialReportState, reportCodeAction } from '@/app/actions/report-code';
+import { reportCodeAction } from '@/app/actions/report-code';
+import { initialReportState } from '@/lib/action-state';
 import { useToast } from '@/components/Toast';
 import { getReporterKey } from '@/lib/reporter-key';
 import { SITE } from '@/lib/site';

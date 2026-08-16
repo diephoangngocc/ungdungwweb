@@ -1,11 +1,8 @@
 'use client';
 
 import { useActionState, useEffect, useMemo, useState } from 'react';
-import {
-  adminSetStatusAction,
-  adminUpdateCodeAction,
-  initialActionState,
-} from '@/app/actions/admin';
+import { adminSetStatusAction, adminUpdateCodeAction } from '@/app/actions/admin';
+import { initialActionState } from '@/lib/action-state';
 import { useToast } from '@/components/Toast';
 import { TierBadge } from '@/components/TierBadge';
 import { MAX_USES, TIER_OPTIONS, type CodeRow } from '@/lib/types';

@@ -4,15 +4,8 @@ import { revalidatePath } from 'next/cache';
 import { getSupabaseServerClient } from '@/lib/supabase/server';
 import { reportCodeSchema } from '@/lib/validation';
 import { describeError, parseRpcError } from '@/lib/errors';
-
-export type ReportState = {
-  status: 'idle' | 'success' | 'error';
-  message: string;
-  /** Số báo cáo đang mở của mã sau khi ghi nhận. */
-  reportCount?: number;
-};
-
-export const initialReportState: ReportState = { status: 'idle', message: '' };
+// 'use server' => chỉ được export async function; kiểu + hằng ở @/lib/action-state.
+import type { ReportState } from '@/lib/action-state';
 
 export async function reportCodeAction(
   _prevState: ReportState,
