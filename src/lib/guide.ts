@@ -6,6 +6,10 @@
  *
  * Ảnh nằm trong `public/guide/`. Thay ảnh mới thì giữ nguyên tên file,
  * hoặc đổi đường dẫn ở đây. Ảnh dọc (ảnh chụp điện thoại) là hợp nhất.
+ *
+ * Bộ ảnh hiện tại tách từ hai file hướng dẫn PDF do chủ web soạn: mỗi ảnh đã có
+ * sẵn ô chú thích vàng và khung xanh chỉ đúng chỗ cần bấm, nên phần `text` chỉ
+ * cần thuật lại thao tác chứ không phải mô tả vị trí nút.
  */
 export type GuideStep = {
   text: string;
@@ -37,30 +41,53 @@ export const GUIDE_PHASES: GuidePhase[] = [
     badge: 'App Mango+',
     navLabel: 'Vote Mango',
     title: 'Hướng dẫn tích vote app Mango',
-    summary: 'Điểm danh, làm nhiệm vụ rồi chơi game để đổi ra Mã Lực vote cho Hà An Huy.',
+    summary:
+      'Điểm danh, làm nhiệm vụ rồi chơi game để tích Mã Lực, sau đó đổi Mã Lực thành vote cho Hà An Huy.',
     steps: [
       {
         text: 'Mở app **Mango+**, ấn nút **Event Hub** ở thanh dưới cùng. Hoặc ấn thẳng vào **logo ATVNCG** trên banner.',
         image: '/guide/buoc-1.jpg',
-        imageAlt: 'Màn hình chính Mango+ với nút Event Hub ở thanh dưới',
+        imageAlt: 'Màn hình chính Mango+ với nút Event Hub ở thanh dưới và logo ATVNCG trên banner',
       },
       {
-        text: 'Tìm sự kiện **Tích Mã Lực, Tiếp Sức Anh Tài** rồi ấn **Tham gia ngay**.',
+        text: 'Trong Event Hub, tìm sự kiện **Tích Mã Lực, Tiếp Sức Anh Tài** rồi ấn **Tham gia ngay**.',
         image: '/guide/buoc-2.jpg',
         imageAlt: 'Danh sách sự kiện trong Event Hub, nút Tham gia ngay',
       },
       {
-        text: 'Vào trong sự kiện, con số ở góc trên bên trái chính là **điểm Mã Lực** của bạn.',
+        text: 'Vào trong sự kiện, con số ở góc trên bên trái chính là **điểm Mã Lực** của bạn. Ấn **Nhận Mã Lực Ngay** để lấy phần Mã Lực dành cho người mới. Nếu bạn chưa nhập mã mời, sang trang **Lấy & gửi mã** của web này copy một mã rồi dán vào mục **Referral**.',
         image: '/guide/buoc-3.jpg',
-        imageAlt: 'Trang sự kiện: điểm Mã Lực, mục Referral, Nhiệm vụ và nút Chơi ngay',
+        imageAlt: 'Trang sự kiện: điểm Mã Lực, mục Referral, Nhiệm vụ, Chơi ngay và Nhận Mã Lực Ngay',
       },
       {
-        text: 'Ấn **Nhiệm Vụ** rồi làm nhiệm vụ hằng ngày để lấy lượt chơi: **Điểm danh hàng ngày** (Free +1, VIP +3, SVIP +10 lượt) và **Xem ATVNCG 2026 ít nhất 5 phút** (+1 lượt, tối đa 3 lần/ngày).',
+        text: 'Ấn **Nhiệm Vụ** rồi làm nhiệm vụ hằng ngày để lấy lượt chơi: **Điểm danh hằng ngày** (Free +1, VIP +3, SVIP +10 lượt) và **Xem ATVNCG 2026 ít nhất 5 phút** (+1 lượt, tối đa 3 lần/ngày).',
         image: '/guide/buoc-4.jpg',
-        imageAlt: 'Bảng Nhiệm vụ Mã Lực với điểm danh và xem ATVNCG',
+        imageAlt: 'Bảng Nhiệm vụ Mã Lực với điểm danh hằng ngày và xem ATVNCG',
       },
       {
-        text: 'Có lượt rồi thì ấn **CHƠI NGAY** để chơi game đổi ra Mã Lực. Ngoài ra ấn **Nhận Mã Lực Ngay** để lấy phần Mã Lực dành cho bạn mới.',
+        text: 'Có lượt rồi thì ấn **CHƠI NGAY** để chơi game đổi ra Mã Lực. Xong thì kéo xuống phần **Bảng quyền lợi Mã Lực**, ở dòng **Vote anh tài yêu thích** (50 Mã Lực = 1 vote) ấn **Vote ngay**.',
+        image: '/guide/buoc-5.jpg',
+        imageAlt: 'Bảng quyền lợi Mã Lực: 50 Mã Lực đổi 1 vote, nút Vote ngay',
+      },
+      {
+        text: 'Ở trang **Hạng mục bình chọn**, chọn bảng bạn muốn vote rồi ấn **Bình chọn**.',
+        image: '/guide/buoc-6.jpg',
+        imageAlt: 'Trang Hạng mục bình chọn với các bảng và nút Bình chọn',
+      },
+      {
+        text: 'Tìm **HÀ AN HUY** trong danh sách rồi ấn **+VOTE** ở bên phải tên.',
+        image: '/guide/buoc-7.jpg',
+        imageAlt: 'Danh sách anh tài, nút +VOTE bên cạnh tên Hà An Huy',
+      },
+      {
+        text: 'Hộp **Đổi Mã Lực ra Vote** hiện lên: ấn dấu **+ / −** để chỉnh số vote muốn đổi, hoặc ấn **ĐỔI TẤT CẢ** để dùng hết Mã Lực đang có.',
+        image: '/guide/buoc-8.jpg',
+        imageAlt: 'Hộp thoại Đổi Mã Lực ra Vote với nút cộng trừ và Đổi tất cả',
+      },
+      {
+        text: 'Cuối cùng ấn **ĐỔI VOTE** để chốt. Mã Lực bị trừ đi và số vote được cộng cho bảng vừa chọn.',
+        image: '/guide/buoc-9.jpg',
+        imageAlt: 'Hộp thoại Đổi Mã Lực ra Vote với nút Đổi Vote được đánh dấu',
       },
     ],
   },
@@ -103,9 +130,29 @@ export const GUIDE_PHASES: GuidePhase[] = [
         imageAlt: 'Lịch sử thêm lượt: điểm danh hằng ngày +2 lượt',
       },
       {
-        text: 'Vào bảng vote **ANH TRAI VƯỢT NGÀN CHÔNG GAI 2026**, chọn **HÀ AN HUY**, chọn số vote muốn dùng rồi ấn **Xác nhận**. Số vote đang có hiện ở góc trên bên phải.',
+        text: 'Về **Trang chủ**, kéo tới mục **Chương trình thịnh hành** rồi chọn **ANH TRAI VƯỢT NGÀN CHÔNG GAI 2026**.',
         image: '/guide/1c-7.jpg',
-        imageAlt: 'Màn hình bình chọn cho Hà An Huy với ô chọn số vote và nút Xác nhận',
+        imageAlt: 'Trang chủ 1Creators với mục Chương trình thịnh hành',
+      },
+      {
+        text: 'Trong trang chương trình, chọn tab **Bình chọn** rồi kéo xuống phần **Hạng mục bình chọn**.',
+        image: '/guide/1c-8.jpg',
+        imageAlt: 'Trang chương trình ATVNCG 2026 với tab Bình chọn',
+      },
+      {
+        text: 'Chọn bảng bạn muốn vote rồi ấn **Bình chọn**.',
+        image: '/guide/1c-9.jpg',
+        imageAlt: 'Danh sách hạng mục bình chọn với nút Bình chọn của từng bảng',
+      },
+      {
+        text: 'Tìm **HÀ AN HUY** trong danh sách rồi ấn **ngôi sao đỏ** bên phải tên. Số vote đang có hiện ở góc trên bên phải.',
+        image: '/guide/1c-10.jpg',
+        imageAlt: 'Danh sách anh tài với nút ngôi sao bên cạnh tên Hà An Huy',
+      },
+      {
+        text: 'Hộp **Bình chọn cho** hiện lên: chỉnh số vote bằng dấu **+ / −** rồi ấn **Xác nhận** để dùng vote.',
+        image: '/guide/1c-11.jpg',
+        imageAlt: 'Hộp thoại bình chọn cho Hà An Huy với ô chọn số vote và nút Xác nhận',
       },
     ],
   },

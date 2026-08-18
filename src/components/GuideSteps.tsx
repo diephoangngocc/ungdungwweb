@@ -52,13 +52,19 @@ export function GuideSteps({ steps }: { steps: GuideStep[] }) {
                   className="block overflow-hidden rounded-xl border border-slate-200 transition-shadow hover:shadow-md focus-visible:shadow-md"
                   aria-label="Phóng to ảnh minh hoạ"
                 >
+                  {/*
+                    `h-auto` là bắt buộc: width/height dưới đây chỉ là gợi ý cho
+                    Next, trình duyệt lấy đúng tỉ lệ đó làm aspect-ratio. Bộ ảnh
+                    cắt từ PDF có tỉ lệ không đều nhau (1.6 tới 2.1), thiếu
+                    `h-auto` là ảnh bị kéo méo theo khung 520×1085.
+                  */}
                   <Image
                     src={step.image}
                     alt={step.imageAlt ?? ''}
                     width={520}
                     height={1085}
                     sizes="(max-width: 640px) 60vw, 280px"
-                    className="w-48 sm:w-64"
+                    className="h-auto w-48 sm:w-64"
                   />
                   <span className="block bg-slate-50 px-2 py-1.5 text-center text-xs font-medium text-slate-500">
                     Bấm để phóng to
